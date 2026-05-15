@@ -8,6 +8,7 @@ import { PageHeader } from '@/components/ui/PageHeader'
 import type { SessionMeta, ProvType, Season, Section } from '@/types'
 
 const ALL_SECTIONS: Section[] = ['ORD', 'LÄS', 'MEK', 'ELF', 'XYZ', 'KVA', 'NOG', 'DTK']
+const VERBAL_SECTIONS = new Set<Section>(['ORD', 'LÄS', 'MEK', 'ELF'])
 
 type StatusFilter = 'all' | 'done' | 'in-progress' | 'new'
 
@@ -36,10 +37,14 @@ export default function Library() {
       if (typeFilter !== 'all' && meta.type !== typeFilter) return false
       if (seasonFilter !== 'all' && meta.season !== seasonFilter) return false
       if (statusFilter !== 'all' && getStatus(meta) !== statusFilter) return false
+      if (sectionFilter !== 'all') {
+        const needsVerbal = VERBAL_SECTIONS.has(sectionFilter)
+        if (meta.type !== (needsVerbal ? 'verbal' : 'kvantitativ')) return false
+      }
       if (search && !meta.id.includes(search.toLowerCase()) && !String(meta.year).includes(search)) return false
       return true
     })
-  }, [index, typeFilter, seasonFilter, statusFilter, search, sessions])
+  }, [index, typeFilter, seasonFilter, statusFilter, sectionFilter, search, sessions])
 
   const years = useMemo(() => {
     if (!index) return []

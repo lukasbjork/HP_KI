@@ -9,12 +9,14 @@ export function AppShell() {
 
   useEffect(() => {
     const root = document.documentElement
-    if (theme === 'dark') root.classList.add('dark')
-    else if (theme === 'light') root.classList.remove('dark')
-    else {
-      const mq = window.matchMedia('(prefers-color-scheme: dark)')
-      mq.matches ? root.classList.add('dark') : root.classList.remove('dark')
-    }
+    if (theme === 'dark') { root.classList.add('dark'); return }
+    if (theme === 'light') { root.classList.remove('dark'); return }
+    const mq = window.matchMedia('(prefers-color-scheme: dark)')
+    const apply = (dark: boolean) => dark ? root.classList.add('dark') : root.classList.remove('dark')
+    apply(mq.matches)
+    const handler = (e: MediaQueryListEvent) => apply(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
   }, [theme])
 
   return (

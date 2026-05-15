@@ -24,14 +24,13 @@ export default function Settings() {
     const rows: string[] = ['SessionID,Sektion,FrageID,Svar,Rätt,Tidstämpel']
     for (const session of Object.values(sessions)) {
       for (const attempt of session.attempts) {
-        rows.push([
-          attempt.sessionId,
-          attempt.section,
-          attempt.questionId,
-          attempt.chosen,
-          attempt.correct ? 'Ja' : 'Nej',
-          new Date(attempt.timestamp).toISOString(),
-        ].join(','))
+        rows.push(
+          [attempt.sessionId, attempt.section, String(attempt.questionId),
+           attempt.chosen, attempt.correct ? 'Ja' : 'Nej',
+           new Date(attempt.timestamp).toISOString()]
+          .map(f => `"${f.replace(/"/g, '""')}"`)
+          .join(',')
+        )
       }
     }
     const blob = new Blob([rows.join('\n')], { type: 'text/csv' })

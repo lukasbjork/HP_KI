@@ -30,7 +30,7 @@ export function useSessionIndex() {
   useEffect(() => {
     fetchSessionIndex()
       .then(setData)
-      .catch(e => setError(e.message))
+      .catch(e => setError(e instanceof Error ? e.message : String(e)))
       .finally(() => setLoading(false))
   }, [])
 
@@ -47,7 +47,7 @@ export function useSession(id: string | undefined) {
     setLoading(true)
     fetchSession(id)
       .then(setData)
-      .catch(e => setError(e.message))
+      .catch(e => setError(e instanceof Error ? e.message : String(e)))
       .finally(() => setLoading(false))
   }, [id])
 
