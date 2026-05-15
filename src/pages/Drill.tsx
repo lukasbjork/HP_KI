@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo } from 'react'
+import { useState, useCallback, useMemo, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Dumbbell, CheckCircle2, XCircle, RefreshCw } from 'lucide-react'
 import { useProgressStore } from '@/stores/progressStore'
@@ -106,7 +106,7 @@ export default function Drill() {
     })
   }, [drillQuestions, currentIdx, showResult, recordAttempt])
 
-  function next() {
+  const next = useCallback(() => {
     if (currentIdx + 1 >= drillQuestions.length) {
       setDrillState('done')
     } else {
@@ -114,10 +114,25 @@ export default function Drill() {
       setSelectedAnswer(null)
       setShowResult(false)
     }
-  }
+  }, [currentIdx, drillQuestions.length])
 
   const correctCount = results.filter(r => r.correct).length
   const currentQ = drillQuestions[currentIdx]
+
+  useEffect(() => {
+    if (drillState !== 'active') return
+    const MAP: Record<string, AnswerOption> = { '1': 'A', '2': 'B', '3': 'C', '4': 'D', '5': 'E' }
+    function onKey(e: KeyboardEvent) {
+      const ans = MAP[e.key]
+      if (!showResult && ans) { handleAnswer(ans); return }
+      if (showResult && (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowRight')) {
+        e.preventDefault()
+        next()
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [drillState, showResult, handleAnswer, next])
 
   // Config view
   if (drillState === 'config') {

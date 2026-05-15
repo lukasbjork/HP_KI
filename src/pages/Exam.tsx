@@ -291,6 +291,25 @@ export default function Exam() {
     examStore.finishExam()
   }, [examStore, progressStore, paramId])
 
+  useEffect(() => {
+    if (examStore.phase !== 'active') return
+    const MAP: Record<string, AnswerOption> = { '1': 'A', '2': 'B', '3': 'C', '4': 'D', '5': 'E' }
+    function onKey(e: KeyboardEvent) {
+      const ans = MAP[e.key]
+      if (ans) { handleAnswer(ans); return }
+      const st = useExamStore.getState()
+      if (e.key === 'ArrowLeft') { st.prevQuestion(); return }
+      if (e.key === 'ArrowRight') {
+        const sec = st.sections[st.currentSectionIndex]
+        if (st.currentQuestionIndex < (sec?.questions.length ?? 0) - 1) st.nextQuestion()
+        else if (st.currentSectionIndex < st.sections.length - 1) st.nextSection()
+        else handleComplete()
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [examStore.phase, handleAnswer, handleComplete])
+
   if (!paramId) {
     return (
       <div className="p-8 text-center">

@@ -1,73 +1,67 @@
-# React + TypeScript + Vite
+# HP_KI — Studieportal för Högskoleprovet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Studieverktyg för Högskoleprovet med fokus på KI läkarprogrammets antagningskrav (stanine ≥ 2.0).
 
-Currently, two official plugins are available:
+## Funktioner
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Provläge** — 55-minuters nedräkningstimer, flaggning, frågenavigator, pause/fortsätt
+- **Övningsläge** — SRS-viktat urval (svåra frågor prioriteras), direktfeedback per fråga
+- **Statistik** — stanine-estimat, träffsäkerhet per delområde, poängutveckling över tid
+- **Flashcards** — SM-2 spaced repetition för ORD-sektionen
+- **Provbibliotek** — Höst 2013–Vår 2026, filtrera på år/säsong/typ/status
+- **Mobilanpassad** — bottom-nav på mobil, desktop sidebar
 
-## React Compiler
+## Tangentbordsgenvägar (Provläge & Övningsläge)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Tangent | Funktion |
+|---------|----------|
+| `1`–`5` | Välj svarsalternativ A–E |
+| `Enter` / `Space` | Nästa fråga (efter svar visats) |
+| `→` | Nästa fråga / nästa del |
+| `←` | Föregående fråga (Provläge) |
 
-## Expanding the ESLint configuration
+## Kom igång lokalt
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Fyll på med riktiga frågor (datapipeline)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Datapipelinen körs lokalt och kräver internet. Genererade JSON-filer committas till repot.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run download-pdfs   # laddar ner PDFs från hogskoleprovet.nu → scripts/pdfs/
+npm run generate-data   # extraherar frågor → public/data/sessions/*.json
 ```
+
+> Kvantitativa sektioner (XYZ/KVA/NOG/DTK) är bildbaserade — extract-quant.ts skapar platshållare.
+> Verbala sektioner (ORD/LÄS/MEK) extraheras som text med pdf-parse.
+> ELF togs bort från HP ~2010 och saknas i 2013–2026-sessionerna.
+
+## Deploy
+
+Projektet är konfigurerat för Netlify via `netlify.toml`.
+
+```
+Build command:  npm run build
+Publish dir:    dist
+```
+
+Koppla GitHub-repot `lukasbjork/HP_KI` till Netlify (main-branch), eller dra-och-släpp `dist/`-mappen på netlify.com/drop.
+
+## Projektstruktur
+
+```
+src/pages/       Dashboard, Library, Exam, Drill, Statistics, Flashcards, Settings
+src/stores/      Zustand stores: progressStore (SM-2 + localStorage), examStore, settingsStore
+src/utils/       scoring.ts, spaced-repetition.ts, useSessionData.ts
+src/components/  layout/ (AppShell, Sidebar, BottomNav), ui/ (SectionBadge, ProgressBar, …)
+scripts/         Datapipeline — download-pdfs, extract-verbal, extract-quant, generate-data
+public/data/     index.json (116 sessionmetadataposter) + sessions/*.json (lazy-loaded)
+```
+
+## Stack
+
+React 19 · Vite 6 · TypeScript 5 · Tailwind CSS 4 · Zustand 5 · React Router 7 · Framer Motion · Recharts · Lucide React
