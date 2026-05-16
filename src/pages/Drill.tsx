@@ -6,6 +6,7 @@ import { useSessionIndex, fetchSession } from '@/utils/useSessionData'
 import { SectionBadge } from '@/components/ui/SectionBadge'
 import { ProgressBar } from '@/components/ui/ProgressBar'
 import { difficultyWeight } from '@/utils/spaced-repetition'
+import { useSearchParams } from 'react-router-dom'
 import type { Section, Question, AnswerOption } from '@/types'
 
 const SECTIONS: Section[] = ['ORD', 'LÄS', 'MEK', 'ELF', 'XYZ', 'KVA', 'NOG', 'DTK']
@@ -21,9 +22,11 @@ interface DrillQuestion extends Question {
 export default function Drill() {
   const { data: index } = useSessionIndex()
   const { sessions, recordAttempt } = useProgressStore()
+  const [searchParams] = useSearchParams()
 
   const [drillState, setDrillState] = useState<DrillState>('config')
-  const [selectedSection, setSelectedSection] = useState<Section | 'all'>('all')
+  const defaultSection = (searchParams.get('section') as Section | null) ?? 'all'
+  const [selectedSection, setSelectedSection] = useState<Section | 'all'>(defaultSection)
   const [questionCount, setQuestionCount] = useState(20)
   const [difficultOnly, setDifficultOnly] = useState(false)
 

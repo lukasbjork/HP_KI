@@ -1,13 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ki-blue: #1a3a6b;
-  --color-ki-blue-dark: #112548;
-  --color-ki-blue-light: #2a4f8a;
-  --color-ki-mid: #2d5fa0;
-  --color-ki-gold: #f0c040;
-  --color-ki-gold-dark: #d4a820;
-  --color-ki-gold-light: #f5d070;
+  --color-ki-blue: #1a2f5a;
+  --color-ki-blue-dark: #0f1e3d;
+  --color-ki-blue-light: #253d6e;
+  --color-ki-mid: #2a5592;
+  --color-ki-gold: #f59e0b;
+  --color-ki-gold-dark: #d97706;
+  --color-ki-gold-light: #fcd34d;
+  --color-ki-orange: #ea580c;
+  --color-ki-purple: #7c3aed;
+  --color-ki-green: #16a34a;
   --color-surface: #f8f9fc;
   --color-surface-dark: #1a1f2e;
   --color-card: #ffffff;
@@ -45,7 +48,7 @@
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #1a3a6b transparent;
+  scrollbar-color: #1a2f5a transparent;
 }
 
 input[type="number"]::-webkit-outer-spin-button,

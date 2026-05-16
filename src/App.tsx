@@ -1,6 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 import { AppShell } from '@/components/layout/AppShell'
+import { PublicShell } from '@/components/layout/PublicShell'
+
+const Landing = lazy(() => import('@/pages/Landing'))
+const OmHP = lazy(() => import('@/pages/OmHP'))
+const Normering = lazy(() => import('@/pages/Normering'))
 
 const Dashboard = lazy(() => import('@/pages/Dashboard'))
 const Library = lazy(() => import('@/pages/Library'))
@@ -23,8 +28,13 @@ export default function App() {
     <BrowserRouter>
       <Suspense fallback={<PageLoader />}>
         <Routes>
+          <Route element={<PublicShell />}>
+            <Route index element={<Landing />} />
+            <Route path="om-hp" element={<OmHP />} />
+            <Route path="normering" element={<Normering />} />
+          </Route>
           <Route element={<AppShell />}>
-            <Route index element={<Dashboard />} />
+            <Route path="dashboard" element={<Dashboard />} />
             <Route path="library" element={<Library />} />
             <Route path="library/:sessionId" element={<Library />} />
             <Route path="exam" element={<Exam />} />
