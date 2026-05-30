@@ -1,0 +1,424 @@
+{
+  "id": "hp-v2023-verb2",
+  "year": 2023,
+  "season": "vår",
+  "type": "verbal",
+  "variant": 2,
+  "sections": {
+    "ORD": [
+      {
+        "id": 1,
+        "question": "ihärdig",
+        "options": {
+          "A": "snabb och explosiv",
+          "B": "hård och okänslig",
+          "C": "envis och uthållig",
+          "D": "ivrig och hoppfull",
+          "E": "erfaren och duktig"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 2,
+        "question": "hereditet",
+        "options": {
+          "A": "ensamhet",
+          "B": "vänlighet",
+          "C": "fromhet",
+          "D": "sjuklighet",
+          "E": "ärftlighet"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 3,
+        "question": "begrunda",
+        "options": {
+          "A": "tillägna sig",
+          "B": "instämma i",
+          "C": "ta itu med",
+          "D": "fundera på",
+          "E": "besluta sig för"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 4,
+        "question": "klädsam",
+        "options": {
+          "A": "blyg",
+          "B": "ytlig",
+          "C": "modern",
+          "D": "enkel",
+          "E": "passande"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 6,
+        "question": "utfall",
+        "options": {
+          "A": "minskning",
+          "B": "avvikelse",
+          "C": "sannolikhet",
+          "D": "resultat",
+          "E": "överskott"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 7,
+        "question": "cementera",
+        "options": {
+          "A": "slutföra",
+          "B": "jämna till",
+          "C": "göra avtryck",
+          "D": "stänga inne",
+          "E": "göra beständig"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 8,
+        "question": "trollbunden",
+        "options": {
+          "A": "inbillad",
+          "B": "fascinerad",
+          "C": "grundlurad",
+          "D": "förvirrad",
+          "E": "överraskad"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 9,
+        "question": "lasyr",
+        "options": {
+          "A": "finslipad yta",
+          "B": "genomskinlig färg",
+          "C": "stilfull dekoration",
+          "D": "oönskad beläggning",
+          "E": "förgrenat mönster"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 10,
+        "question": "vag",
+        "options": {
+          "A": "obestämd",
+          "B": "avlägsen",
+          "C": "betydelselös",
+          "D": "tillfällig",
+          "E": "ostadig"
+        },
+        "correct": "C"
+      }
+    ],
+    "LÄS": [
+      {
+        "id": 11,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/11.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 13,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/13.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 14,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/14.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 17,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/17.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 18,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/18.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      }
+    ],
+    "MEK": [
+      {
+        "id": 21,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/21.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 22,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/22.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 23,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/23.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "E"
+      },
+      {
+        "id": 24,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/24.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 25,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/25.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 26,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/26.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 27,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/27.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 28,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/28.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 29,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/29.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 30,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/30.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "C"
+      }
+    ],
+    "ELF": [
+      {
+        "id": 31,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/31.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 32,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/32.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 33,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/33.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 34,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/34.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 35,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/35.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 36,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/36.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 37,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/37.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 38,
+        "question": "",
+        "image": "/data/images/var-2023/verb2/38.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "A"
+      }
+    ]
+  }
+}

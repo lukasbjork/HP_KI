@@ -1,0 +1,412 @@
+{
+  "id": "hp-h2023-verb1",
+  "year": 2023,
+  "season": "höst",
+  "type": "verbal",
+  "variant": 1,
+  "sections": {
+    "ORD": [
+      {
+        "id": 1,
+        "question": "proper",
+        "options": {
+          "A": "stolt",
+          "B": "måttfull",
+          "C": "allvarlig",
+          "D": "förmögen",
+          "E": "välvårdad"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 2,
+        "question": "galosch",
+        "options": {
+          "A": "filthatt",
+          "B": "slipsnål",
+          "C": "högtidsdräkt",
+          "D": "slängkappa",
+          "E": "gummisko"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 3,
+        "question": "dementera",
+        "options": {
+          "A": "sörja",
+          "B": "förneka",
+          "C": "ljuga",
+          "D": "förbjuda",
+          "E": "störa"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 5,
+        "question": "cerebral",
+        "options": {
+          "A": "som orsakar smärta",
+          "B": "som gäller hjärnan",
+          "C": "som rör synen",
+          "D": "som beror på kosten",
+          "E": "som sker reflexmässigt"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 6,
+        "question": "hemsökelse",
+        "options": {
+          "A": "utbredd plåga",
+          "B": "rastlöshet",
+          "C": "formell begäran",
+          "D": "uppståndelse",
+          "E": "personligt erbjudande"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 7,
+        "question": "tjänlig",
+        "options": {
+          "A": "lärorik",
+          "B": "begriplig",
+          "C": "användbar",
+          "D": "tillgänglig",
+          "E": "lättskött"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 9,
+        "question": "klander",
+        "options": {
+          "A": "orimligt antagande",
+          "B": "osann uppgift",
+          "C": "ogillande anmärkning",
+          "D": "omild behandling",
+          "E": "olyckligt misstag"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 10,
+        "question": "omsorgsfull",
+        "options": {
+          "A": "noggrann",
+          "B": "trevlig",
+          "C": "bekymrad",
+          "D": "tankfull",
+          "E": "inställsam"
+        },
+        "correct": "C"
+      }
+    ],
+    "LÄS": [
+      {
+        "id": 11,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/11.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 13,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/13.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 14,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/14.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 17,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/17.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 18,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/18.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      }
+    ],
+    "MEK": [
+      {
+        "id": 21,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/21.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 22,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/22.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 23,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/23.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 24,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/24.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "E"
+      },
+      {
+        "id": 25,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/25.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 26,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/26.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 27,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/27.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "E"
+      },
+      {
+        "id": 28,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/28.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 29,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/29.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 30,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/30.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "C"
+      }
+    ],
+    "ELF": [
+      {
+        "id": 31,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/31.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 32,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/32.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 33,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/33.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 34,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/34.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 35,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/35.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 38,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/38.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 39,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/39.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 40,
+        "question": "",
+        "image": "/data/images/host-2023/verb1/40.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "D"
+      }
+    ]
+  }
+}

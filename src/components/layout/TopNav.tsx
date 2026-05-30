@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { Menu, X, ChevronDown, BookOpen, BarChart2 } from 'lucide-react'
+import { Menu, X, ChevronDown, BookOpen, BarChart2, Settings } from 'lucide-react'
 
 const SECTIONS = [
   { code: 'ORD', name: 'Ordförståelse' },
@@ -129,8 +129,13 @@ export function TopNav() {
           </NavLink>
         </div>
 
-        {/* Dashboard shortcut (desktop) */}
+        {/* Dashboard + settings shortcuts (desktop) */}
         <div className="hidden lg:flex items-center gap-2 ml-auto">
+          <NavLink to="/settings" aria-label="Inställningar"
+            className={({ isActive }) =>
+              `p-2 rounded-lg transition-colors ${isActive ? 'text-ki-blue bg-gray-100' : 'text-gray-500 hover:text-ki-blue hover:bg-gray-50'}`}>
+            <Settings size={18} />
+          </NavLink>
           <NavLink to="/dashboard"
             className="px-4 py-2 text-sm font-semibold text-white bg-ki-blue hover:bg-ki-blue-dark rounded-lg transition-colors shadow-sm border border-ki-blue-light">
             Min dashboard
@@ -192,9 +197,9 @@ export function TopNav() {
               className="block px-3 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg">
               Statistik
             </NavLink>
-            <NavLink to="/dashboard" onClick={() => setMobileOpen(false)}
+            <NavLink to="/settings" onClick={() => setMobileOpen(false)}
               className="block px-3 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg">
-              Min dashboard
+              Inställningar
             </NavLink>
 
             <div className="border-t border-gray-100 my-2" />

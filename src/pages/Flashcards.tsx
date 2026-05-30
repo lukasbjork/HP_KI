@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FlipHorizontal2, CheckCircle2, HelpCircle, XCircle } from 'lucide-react'
 import { useProgressStore } from '@/stores/progressStore'
@@ -13,6 +14,7 @@ interface FlashCard {
 }
 
 export default function Flashcards() {
+  const navigate = useNavigate()
   const { data: index } = useSessionIndex()
   const { srsCards, updateSRSCard } = useProgressStore()
 
@@ -22,35 +24,42 @@ export default function Flashcards() {
   const [loading, setLoading] = useState(true)
   const [done, setDone] = useState(false)
 
-  useEffect(() => {
-    async function loadCards() {
-      if (!index) return
-      const pool: FlashCard[] = []
-      for (const meta of index) {
-        try {
-          const session = await fetchSession(meta.id)
-          const ordQuestions = session.sections['ORD'] ?? []
-          for (const q of ordQuestions) {
-            const key = `${meta.id}::ORD::${q.id}`
-            const card = srsCards[key]
-            const isDue = !card || card.nextReview <= Date.now()
-            if (isDue) {
-              pool.push({ question: q, sessionId: meta.id, cardKey: key })
-            }
+  const loadCards = useCallback(async () => {
+    if (!index) return
+    setLoading(true)
+    const pool: FlashCard[] = []
+    for (const meta of index) {
+      try {
+        const session = await fetchSession(meta.id)
+        const ordQuestions = session.sections['ORD'] ?? []
+        for (const q of ordQuestions) {
+          const key = `${meta.id}::ORD::${q.id}`
+          const card = srsCards[key]
+          const isDue = !card || card.nextReview <= Date.now()
+          if (isDue) {
+            pool.push({ question: q, sessionId: meta.id, cardKey: key })
           }
-        } catch {
-          // Skip unavailable sessions
         }
+      } catch {
+        // Skip unavailable sessions
       }
-      // Shuffle
-      for (let i = pool.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [pool[i], pool[j]] = [pool[j], pool[i]]
-      }
-      setCards(pool.slice(0, 50))
-      setLoading(false)
     }
-    loadCards()
+    // Shuffle
+    for (let i = pool.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [pool[i], pool[j]] = [pool[j], pool[i]]
+    }
+    setCards(pool.slice(0, 50))
+    setCurrentIdx(0)
+    setFlipped(false)
+    setDone(false)
+    setLoading(false)
+  }, [index, srsCards])
+
+  // Initial load when the session index becomes available
+  useEffect(() => {
+    if (index) loadCards()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index])
 
   const handleRate = useCallback((rating: SRSRating) => {
@@ -67,6 +76,20 @@ export default function Flashcards() {
       setFlipped(false)
     }
   }, [cards, currentIdx, srsCards, updateSRSCard])
+
+  // Keyboard: space/enter flips; 1/2/3 rates when flipped
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (loading || done || cards.length === 0) return
+      if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); setFlipped(f => !f); return }
+      if (!flipped) return
+      if (e.key === '1') handleRate('kan inte')
+      else if (e.key === '2') handleRate('osäker')
+      else if (e.key === '3') handleRate('kan')
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [loading, done, cards.length, flipped, handleRate])
 
   const masteredCount = Object.values(srsCards).filter(c => c.section === 'ORD' && c.repetitions > 2).length
   const totalORDCards = Object.values(srsCards).filter(c => c.section === 'ORD').length
@@ -101,12 +124,21 @@ export default function Flashcards() {
             <span className="font-bold text-gray-700">{totalORDCards}</span>
           </div>
         </div>
-        <button
-          onClick={() => { setCurrentIdx(0); setDone(false); setFlipped(false) }}
-          className="px-6 py-2.5 bg-ki-blue text-white rounded-xl font-semibold hover:bg-ki-blue-light"
-        >
-          Starta om
-        </button>
+        {cards.length === 0 ? (
+          <button
+            onClick={() => navigate('/drill?section=ORD')}
+            className="px-6 py-2.5 bg-ki-blue text-white rounded-xl font-semibold hover:bg-ki-blue-light"
+          >
+            Öva ORD istället
+          </button>
+        ) : (
+          <button
+            onClick={() => loadCards()}
+            className="px-6 py-2.5 bg-ki-blue text-white rounded-xl font-semibold hover:bg-ki-blue-light"
+          >
+            Hämta nya kort
+          </button>
+        )}
       </div>
     )
   }
@@ -224,7 +256,16 @@ export default function Flashcards() {
       </AnimatePresence>
 
       {!flipped && (
-        <p className="text-center text-gray-400 text-sm mt-6">Klicka på kortet för att se svaret</p>
+        <p className="text-center text-gray-400 text-sm mt-6">
+          Klicka på kortet eller tryck <kbd className="px-1.5 py-0.5 bg-gray-100 rounded text-xs">mellanslag</kbd> för att se svaret
+        </p>
+      )}
+      {flipped && (
+        <p className="text-center text-gray-400 text-xs mt-3">
+          Tangentbord: <kbd className="px-1 bg-gray-100 rounded">1</kbd> kan inte ·
+          <kbd className="px-1 bg-gray-100 rounded ml-1">2</kbd> osäker ·
+          <kbd className="px-1 bg-gray-100 rounded ml-1">3</kbd> kan
+        </p>
       )}
     </div>
   )

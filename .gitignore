@@ -15,6 +15,9 @@ dist-ssr
 # Downloaded PDFs (too large for git)
 scripts/pdfs/
 
+# Generated question images (large, regenerable via npm run generate-data)
+public/data/images/
+
 # Env
 .env
 .env.local
@@ -29,3 +32,6 @@ scripts/pdfs/
 *.njsproj
 *.sln
 *.sw?
+
+# Local Netlify folder
+.netlify

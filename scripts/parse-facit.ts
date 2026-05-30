@@ -4,11 +4,7 @@
  */
 import fs from 'fs'
 import path from 'path'
-
-// pdf-parse is a CommonJS module — use createRequire for ESM compatibility
-import { createRequire } from 'module'
-const require = createRequire(import.meta.url)
-const pdfParse = require('pdf-parse')
+import { getPdfText } from './pdf-text.js'
 
 export type AnswerKey = 'A' | 'B' | 'C' | 'D' | 'E'
 export type SectionAnswers = Record<number, AnswerKey>  // question number → answer
@@ -78,9 +74,7 @@ export async function parseFacit(pdfSlug: string): Promise<FacitResult> {
   const pdfPath = path.resolve('scripts/pdfs', pdfSlug, 'facit.pdf')
   if (!fs.existsSync(pdfPath)) throw new Error(`Facit saknas: ${pdfPath}`)
 
-  const buffer = fs.readFileSync(pdfPath)
-  const data = await pdfParse(buffer)
-  const text: string = data.text
+  const text = await getPdfText(pdfPath)
 
   const modern = parseModern(text)
   if (modern) return modern

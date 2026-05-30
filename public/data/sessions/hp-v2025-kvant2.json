@@ -1,0 +1,491 @@
+{
+  "id": "hp-v2025-kvant2",
+  "year": 2025,
+  "season": "vår",
+  "type": "kvantitativ",
+  "variant": 2,
+  "sections": {
+    "XYZ": [
+      {
+        "id": 1,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/1.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 2,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/2.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 3,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/3.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 4,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/4.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 5,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/5.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 6,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/6.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 7,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/7.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 8,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/8.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 9,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/9.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 10,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/10.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 11,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/11.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 12,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/12.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "B"
+      }
+    ],
+    "KVA": [
+      {
+        "id": 13,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/13.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 14,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/14.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 15,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/15.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 16,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/16.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 17,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/17.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 18,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/18.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 19,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/19.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 20,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/20.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 21,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/21.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 22,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/22.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "A"
+      }
+    ],
+    "NOG": [
+      {
+        "id": 23,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/23.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 24,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/24.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 25,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/25.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 26,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/26.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 27,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/27.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 28,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/28.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "E"
+      }
+    ],
+    "DTK": [
+      {
+        "id": 29,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/29.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 30,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/30.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 31,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/31.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 32,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/32.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 33,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/33.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 34,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/34.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 35,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/35.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "D"
+      },
+      {
+        "id": 36,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/36.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 37,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/37.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 38,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/38.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 40,
+        "question": "",
+        "image": "/data/images/var-2025/kvant2/40.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "correct": "B"
+      }
+    ]
+  }
+}

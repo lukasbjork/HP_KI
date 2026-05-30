@@ -10,7 +10,6 @@ import { useSearchParams } from 'react-router-dom'
 import type { Section, Question, AnswerOption } from '@/types'
 
 const SECTIONS: Section[] = ['ORD', 'LÄS', 'MEK', 'ELF', 'XYZ', 'KVA', 'NOG', 'DTK']
-const OPTIONS: AnswerOption[] = ['A', 'B', 'C', 'D', 'E']
 
 type DrillState = 'config' | 'active' | 'done'
 
@@ -36,6 +35,7 @@ export default function Drill() {
   const [showResult, setShowResult] = useState(false)
   const [results, setResults] = useState<{ correct: boolean }[]>([])
   const [loading, setLoading] = useState(false)
+  const [drillMsg, setDrillMsg] = useState<string | null>(null)
 
   const allAttempts = useMemo(
     () => Object.values(sessions).flatMap(s => s.attempts),
@@ -45,6 +45,7 @@ export default function Drill() {
   async function startDrill() {
     if (!index) return
     setLoading(true)
+    setDrillMsg(null)
     try {
       const pool: DrillQuestion[] = []
       for (const meta of index) {
@@ -78,6 +79,17 @@ export default function Drill() {
       for (let i = selected.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [selected[i], selected[j]] = [selected[j], selected[i]]
+      }
+
+      if (selected.length === 0) {
+        setDrillMsg(
+          difficultOnly
+            ? 'Inga svåra frågor hittades än — svara på fler frågor först eller stäng av "Fokus på svåra frågor".'
+            : selectedSection === 'all'
+              ? 'Inga frågor kunde laddas. Kontrollera att provdata finns.'
+              : `Inga frågor finns för ${selectedSection} ännu. Prova ett annat delområde.`
+        )
+        return
       }
 
       setDrillQuestions(selected)
@@ -210,6 +222,12 @@ export default function Drill() {
             </div>
           </label>
 
+          {drillMsg && (
+            <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-800">
+              {drillMsg}
+            </div>
+          )}
+
           <button
             onClick={startDrill}
             disabled={loading}
@@ -261,6 +279,12 @@ export default function Drill() {
     <div className="max-w-2xl mx-auto p-6">
       {/* Progress */}
       <div className="flex items-center gap-4 mb-6">
+        <button
+          onClick={() => { setDrillState('config'); setDrillMsg(null) }}
+          className="text-sm text-gray-400 hover:text-ki-blue font-medium shrink-0"
+        >
+          ← Avbryt
+        </button>
         <span className="text-sm text-gray-500 font-medium">{currentIdx + 1}/{drillQuestions.length}</span>
         <ProgressBar value={(currentIdx + 1) / drillQuestions.length} />
         <span className="text-sm font-bold text-green-600">{correctCount} ✓</span>
@@ -276,10 +300,29 @@ export default function Drill() {
         >
           <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
             <SectionBadge section={currentQ.section} size="md" />
-            <p className="text-gray-800 font-medium mt-4 mb-5 leading-relaxed">{currentQ.question}</p>
 
-            <div className="space-y-2">
-              {OPTIONS.map(opt => {
+            {currentQ.image && (
+              <img
+                src={currentQ.image}
+                alt={`Fråga ${currentQ.id}`}
+                className="w-full rounded-xl border border-gray-200 mt-4"
+              />
+            )}
+
+            {/* Show text only when it adds information (image-based questions store the text in the image) */}
+            {currentQ.question && !currentQ.question.startsWith('[') && (
+              <p className="text-gray-800 font-medium mt-4 mb-5 leading-relaxed">{currentQ.question}</p>
+            )}
+
+            {currentQ.image && (
+              <p className="text-xs text-gray-400 mt-4 mb-3">Välj rätt svarsalternativ enligt bilden:</p>
+            )}
+
+            <div
+              className={currentQ.image ? 'grid gap-2 mt-2' : 'space-y-2 mt-2'}
+              style={currentQ.image ? { gridTemplateColumns: `repeat(${Object.keys(currentQ.options).length || 4}, minmax(0, 1fr))` } : undefined}
+            >
+              {(Object.keys(currentQ.options) as AnswerOption[]).map(opt => {
                 const isSelected = selectedAnswer === opt
                 const isCorrect = currentQ.correct === opt
                 let cls = 'border-gray-200 bg-white text-gray-700 hover:border-ki-blue/40'
@@ -287,6 +330,24 @@ export default function Drill() {
                 else if (showResult && isSelected && !isCorrect) cls = 'border-red-400 bg-red-50 text-red-800'
                 else if (showResult && isCorrect) cls = 'border-green-400 bg-green-50 text-green-700'
                 else if (isSelected) cls = 'border-ki-blue bg-ki-blue/5 text-ki-blue'
+
+                // Image-based questions: compact letter buttons (alternatives live in the image)
+                const letterOnly = !!currentQ.image || currentQ.options[opt] === opt
+
+                if (letterOnly) {
+                  return (
+                    <button
+                      key={opt}
+                      onClick={() => handleAnswer(opt)}
+                      disabled={showResult}
+                      className={`flex items-center justify-center gap-1 py-3 rounded-xl border-2 font-bold transition-all ${cls}`}
+                    >
+                      {opt}
+                      {showResult && isCorrect && <CheckCircle2 size={14} className="text-green-600" />}
+                      {showResult && isSelected && !isCorrect && <XCircle size={14} className="text-red-500" />}
+                    </button>
+                  )
+                }
 
                 return (
                   <button

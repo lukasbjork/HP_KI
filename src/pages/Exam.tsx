@@ -11,8 +11,6 @@ import { ProgressBar } from '@/components/ui/ProgressBar'
 import { formatDuration } from '@/utils/scoring'
 import type { AnswerOption, Question, Section } from '@/types'
 
-const OPTIONS: AnswerOption[] = ['A', 'B', 'C', 'D', 'E']
-
 function QuestionView({
   question,
   sectionName,
@@ -46,13 +44,22 @@ function QuestionView({
       </div>
 
       {question.image && (
-        <img src={question.image} alt="" className="max-w-full rounded-xl border border-gray-200" />
+        <img src={question.image} alt={`Fråga ${question.id}`} className="max-w-full rounded-xl border border-gray-200" />
       )}
 
-      <p className="text-gray-800 text-base leading-relaxed font-medium">{question.question}</p>
+      {question.question && !question.question.startsWith('[') && (
+        <p className="text-gray-800 text-base leading-relaxed font-medium">{question.question}</p>
+      )}
 
-      <div className="space-y-2">
-        {OPTIONS.map(opt => {
+      {question.image && (
+        <p className="text-xs text-gray-400">Välj rätt svarsalternativ enligt bilden:</p>
+      )}
+
+      <div
+        className={question.image ? 'grid gap-2' : 'space-y-2'}
+        style={question.image ? { gridTemplateColumns: `repeat(${Object.keys(question.options).length || 4}, minmax(0, 1fr))` } : undefined}
+      >
+        {(Object.keys(question.options) as AnswerOption[]).map(opt => {
           const isSelected = selectedAnswer === opt
           const isCorrect = question.correct === opt
           let cls = 'border-gray-200 bg-white text-gray-700 hover:border-ki-blue/40 hover:bg-ki-blue/5'
@@ -60,6 +67,23 @@ function QuestionView({
           else if (showResult && isSelected && !isCorrect) cls = 'border-red-400 bg-red-50 text-red-800'
           else if (showResult && isCorrect) cls = 'border-green-400 bg-green-50 text-green-700'
           else if (isSelected) cls = 'border-ki-blue bg-ki-blue/5 text-ki-blue'
+
+          const letterOnly = !!question.image || question.options[opt] === opt
+
+          if (letterOnly) {
+            return (
+              <button
+                key={opt}
+                onClick={() => !showResult && onAnswer(opt)}
+                disabled={showResult}
+                className={`flex items-center justify-center gap-1 py-3 rounded-xl border-2 font-bold transition-all ${cls}`}
+              >
+                {opt}
+                {showResult && isCorrect && <CheckCircle2 size={14} className="text-green-600" />}
+                {showResult && isSelected && !isCorrect && <XCircle size={14} className="text-red-500" />}
+              </button>
+            )
+          }
 
           return (
             <button
@@ -241,6 +265,7 @@ export default function Exam() {
 
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const lastTickRef = useRef(Date.now())
+  const [confirmFinish, setConfirmFinish] = useState(false)
 
   // Initialize exam when session data loads
   useEffect(() => {
@@ -370,13 +395,50 @@ export default function Exam() {
             </button>
           )}
           <button
-            onClick={handleComplete}
+            onClick={() => setConfirmFinish(true)}
             className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-600 hover:bg-gray-200"
           >
             Avsluta
           </button>
         </div>
       </div>
+
+      {/* Confirm finish overlay */}
+      <AnimatePresence>
+        {confirmFinish && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-6"
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              className="bg-white rounded-2xl p-6 max-w-sm w-full text-center shadow-xl"
+            >
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Avsluta provet?</h3>
+              <p className="text-sm text-gray-500 mb-6">
+                Du har svarat på {answeredQ} av {totalQ} frågor. Resten räknas som obesvarade.
+              </p>
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setConfirmFinish(false)}
+                  className="flex-1 py-2.5 rounded-xl border border-gray-200 text-sm font-medium text-gray-600 hover:bg-gray-50"
+                >
+                  Fortsätt prova
+                </button>
+                <button
+                  onClick={() => { setConfirmFinish(false); handleComplete() }}
+                  className="flex-1 py-2.5 rounded-xl bg-ki-blue text-white text-sm font-semibold hover:bg-ki-blue-light"
+                >
+                  Avsluta &amp; rätta
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Progress bar */}
       <div className="h-1 bg-gray-100 shrink-0">

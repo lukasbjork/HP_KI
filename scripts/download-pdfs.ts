@@ -11,6 +11,13 @@ const PDF_DIR = path.resolve('scripts/pdfs')
 const PDF_SECTIONS = ['verb1', 'verb2', 'kvant1', 'kvant2', 'facit'] as const
 const DELAY_MS = 800
 
+// Optional scope: set HP_SLUGS to a comma-separated list of pdfSlugs to limit
+// which test sittings are downloaded (e.g. "var-2026,host-2025"). Empty = all.
+const SLUG_FILTER = (process.env.HP_SLUGS ?? '')
+  .split(',')
+  .map(s => s.trim())
+  .filter(Boolean)
+
 function sleep(ms: number) {
   return new Promise(r => setTimeout(r, ms))
 }
@@ -35,6 +42,7 @@ async function main() {
   let failed = 0
 
   for (const session of SESSIONS) {
+    if (SLUG_FILTER.length && !SLUG_FILTER.includes(session.pdfSlug)) continue
     if (slugsSeen.has(session.pdfSlug)) continue
     slugsSeen.add(session.pdfSlug)
 

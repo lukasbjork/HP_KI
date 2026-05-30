@@ -1,219 +1,125 @@
 {
-  "id": "hp-v2026-verb1",
+  "id": "hp-v2026-verb2",
   "year": 2026,
   "season": "vår",
   "type": "verbal",
-  "variant": 1,
+  "variant": 2,
   "sections": {
     "ORD": [
       {
         "id": 1,
-        "question": "prognos",
+        "question": "kontentan",
         "options": {
-          "A": "besked",
-          "B": "utvärdering",
-          "C": "sammanfattning",
-          "D": "förutsägelse",
-          "E": "redovisning"
+          "A": "slutfasen",
+          "B": "höjdpunkten",
+          "C": "första intrycket",
+          "D": "motsvarigheten",
+          "E": "huvudinnehållet"
         },
-        "correct": "D",
-        "explanation": "Absurd betyder orimlig eller förnuftsvidrig."
+        "correct": "E"
       },
       {
         "id": 2,
-        "question": "slug",
+        "question": "diffus",
         "options": {
-          "A": "ivrig",
-          "B": "otäck",
-          "C": "girig",
-          "D": "envis",
-          "E": "listig"
+          "A": "underlig",
+          "B": "avskild",
+          "C": "oklar",
+          "D": "tudelad",
+          "E": "skiftande"
         },
-        "correct": "E",
-        "explanation": "Konsekvent betyder enhetlig, att man handlar på samma sätt i likartade situationer."
+        "correct": "C"
       },
       {
         "id": 3,
-        "question": "eftertrakta",
+        "question": "upprätthålla",
         "options": {
-          "A": "ta reda på",
-          "B": "följa efter",
-          "C": "härma",
-          "D": "vilja ha",
-          "E": "fundera på"
+          "A": "ge styrka åt",
+          "B": "ta upp någons tid",
+          "C": "ligga till grund för",
+          "D": "bevara på en viss nivå",
+          "E": "visa upp en snygg fasad"
         },
-        "correct": "D",
-        "explanation": "Flegmatisk beskriver en lugn, ouppjagad person."
+        "correct": "D"
       },
       {
         "id": 4,
-        "question": "potential",
+        "question": "välvillig",
         "options": {
-          "A": "stor skicklighet",
-          "B": "inneboende möjligheter",
-          "C": "sannolikt resultat",
-          "D": "betydande framgångar",
-          "E": "starka förhoppningar"
+          "A": "fast besluten",
+          "B": "pålitlig",
+          "C": "optimistisk",
+          "D": "följsam",
+          "E": "sympatiskt inställd"
         },
-        "correct": "B",
-        "explanation": "Eufori är ett tillstånd av intensiv lycka eller upprymdhet."
+        "correct": "E"
       },
       {
         "id": 5,
-        "question": "utomordentlig",
+        "question": "unikum",
         "options": {
-          "A": "märklig",
-          "B": "förhastad",
-          "C": "oavsiktlig",
-          "D": "förträfflig",
-          "E": "noggrann"
+          "A": "något som är evigt",
+          "B": "något som är ensamt i sitt slag",
+          "C": "något som är dyrbart",
+          "D": "något som är i ständig förändring",
+          "E": "något som är väl känt"
         },
-        "correct": "D",
-        "explanation": "Profan betyder världslig, till skillnad från heligt/sakralt."
-      },
-      {
-        "id": 6,
-        "question": "plombering",
-        "options": {
-          "A": "avskärmning",
-          "B": "omledning",
-          "C": "försegling",
-          "D": "urgröpning",
-          "E": "återställning"
-        },
-        "correct": "C",
-        "explanation": "Reciprok betyder ömsesidig eller inbördes."
+        "correct": "B"
       },
       {
         "id": 7,
-        "question": "miserabel",
+        "question": "utsikter",
         "options": {
-          "A": "eländig",
-          "B": "vilsen",
-          "C": "bitter",
-          "D": "plågsam",
-          "E": "otrevlig"
+          "A": "möjligheter",
+          "B": "upplevelser",
+          "C": "önskemål",
+          "D": "föreställningar",
+          "E": "synpunkter"
         },
-        "correct": "A",
-        "explanation": "Tendens är en benägenhet eller lutning åt ett visst håll."
+        "correct": "A"
       },
       {
         "id": 8,
-        "question": "fadäs",
+        "question": "kröna",
         "options": {
-          "A": "elakt skämt",
-          "B": "kort vistelse",
-          "C": "påminnelse",
-          "D": "oförutsedd utgift",
-          "E": "pinsamt misstag"
+          "A": "besegra",
+          "B": "omforma",
+          "C": "inhägna",
+          "D": "fullända",
+          "E": "överskrida"
         },
-        "correct": "E",
-        "explanation": "Kongruent (om geometriska figurer) betyder sammanfallande, d.v.s. att de är lika stora och lika formade."
+        "correct": "D"
       },
       {
         "id": 9,
-        "question": "ingalunda",
+        "question": "banal",
         "options": {
-          "A": "inte alls",
-          "B": "i onödan",
-          "C": "undantagsvis",
-          "D": "otillräckligt",
-          "E": "ingenstans"
+          "A": "nördig",
+          "B": "typisk",
+          "C": "alldaglig",
+          "D": "obildad",
+          "E": "klumpig"
         },
-        "correct": "A",
-        "explanation": "Redundant betyder överflodig, mer än vad som behövs."
+        "correct": "C"
+      },
+      {
+        "id": 10,
+        "question": "hjärtefråga",
+        "options": {
+          "A": "känslig fråga",
+          "B": "angelägen fråga",
+          "C": "evig fråga",
+          "D": "närgången fråga",
+          "E": "spontan fråga"
+        },
+        "correct": "B"
       }
     ],
     "LÄS": [
       {
         "id": 11,
         "question": "",
-        "image": "/data/images/var-2026/verb1/11.png",
-        "options": {
-          "A": "A",
-          "B": "B",
-          "C": "C",
-          "D": "D",
-          "E": "E"
-        },
-        "correct": "D",
-        "explanation": "Karolinska Institutet grundades 1811."
-      },
-      {
-        "id": 13,
-        "question": "",
-        "image": "/data/images/var-2026/verb1/13.png",
-        "options": {
-          "A": "A",
-          "B": "B",
-          "C": "C",
-          "D": "D",
-          "E": "E"
-        },
-        "correct": "C",
-        "explanation": "Texten betonar att både forskning och utbildning är kärnverksamheter."
-      },
-      {
-        "id": 14,
-        "question": "",
-        "image": "/data/images/var-2026/verb1/14.png",
-        "options": {
-          "A": "A",
-          "B": "B",
-          "C": "C",
-          "D": "D",
-          "E": "E"
-        },
-        "correct": "B",
-        "explanation": "Translationell forskning syftar på att omsätta grundforskningsrön till klinisk tillämpning."
-      },
-      {
-        "id": 17,
-        "question": "",
-        "image": "/data/images/var-2026/verb1/17.png",
-        "options": {
-          "A": "A",
-          "B": "B",
-          "C": "C",
-          "D": "D",
-          "E": "E"
-        },
-        "correct": "A",
-        "explanation": "Texten har en positiv (bejakande) inställning till etikens roll i medicinen."
-      },
-      {
-        "id": 18,
-        "question": "",
-        "image": "/data/images/var-2026/verb1/18.png",
-        "options": {
-          "A": "A",
-          "B": "B",
-          "C": "C",
-          "D": "D",
-          "E": "E"
-        },
-        "correct": "A",
-        "explanation": "Det sista stycket betonar vikten av samarbete för att möta framtidens utmaningar."
-      }
-    ],
-    "MEK": [
-      {
-        "id": 21,
-        "question": "",
-        "image": "/data/images/var-2026/verb1/21.png",
-        "options": {
-          "A": "A",
-          "B": "B",
-          "C": "C",
-          "D": "D",
-          "E": "E"
-        },
-        "correct": "B"
-      },
-      {
-        "id": 22,
-        "question": "",
-        "image": "/data/images/var-2026/verb1/22.png",
+        "image": "/data/images/var-2026/verb2/11.png",
         "options": {
           "A": "A",
           "B": "B",
@@ -224,9 +130,22 @@
         "correct": "C"
       },
       {
-        "id": 23,
+        "id": 13,
         "question": "",
-        "image": "/data/images/var-2026/verb1/23.png",
+        "image": "/data/images/var-2026/verb2/13.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 14,
+        "question": "",
+        "image": "/data/images/var-2026/verb2/14.png",
         "options": {
           "A": "A",
           "B": "B",
@@ -235,11 +154,78 @@
           "E": "E"
         },
         "correct": "D"
+      },
+      {
+        "id": 17,
+        "question": "",
+        "image": "/data/images/var-2026/verb2/17.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 18,
+        "question": "",
+        "image": "/data/images/var-2026/verb2/18.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "A"
+      }
+    ],
+    "MEK": [
+      {
+        "id": 21,
+        "question": "",
+        "image": "/data/images/var-2026/verb2/21.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "A"
+      },
+      {
+        "id": 22,
+        "question": "",
+        "image": "/data/images/var-2026/verb2/22.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 23,
+        "question": "",
+        "image": "/data/images/var-2026/verb2/23.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "C"
       },
       {
         "id": 24,
         "question": "",
-        "image": "/data/images/var-2026/verb1/24.png",
+        "image": "/data/images/var-2026/verb2/24.png",
         "options": {
           "A": "A",
           "B": "B",
@@ -247,12 +233,12 @@
           "D": "D",
           "E": "E"
         },
-        "correct": "D"
+        "correct": "A"
       },
       {
         "id": 25,
         "question": "",
-        "image": "/data/images/var-2026/verb1/25.png",
+        "image": "/data/images/var-2026/verb2/25.png",
         "options": {
           "A": "A",
           "B": "B",
@@ -265,7 +251,7 @@
       {
         "id": 26,
         "question": "",
-        "image": "/data/images/var-2026/verb1/26.png",
+        "image": "/data/images/var-2026/verb2/26.png",
         "options": {
           "A": "A",
           "B": "B",
@@ -273,12 +259,12 @@
           "D": "D",
           "E": "E"
         },
-        "correct": "C"
+        "correct": "D"
       },
       {
         "id": 27,
         "question": "",
-        "image": "/data/images/var-2026/verb1/27.png",
+        "image": "/data/images/var-2026/verb2/27.png",
         "options": {
           "A": "A",
           "B": "B",
@@ -291,7 +277,7 @@
       {
         "id": 28,
         "question": "",
-        "image": "/data/images/var-2026/verb1/28.png",
+        "image": "/data/images/var-2026/verb2/28.png",
         "options": {
           "A": "A",
           "B": "B",
@@ -304,7 +290,20 @@
       {
         "id": 29,
         "question": "",
-        "image": "/data/images/var-2026/verb1/29.png",
+        "image": "/data/images/var-2026/verb2/29.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "C"
+      },
+      {
+        "id": 30,
+        "question": "",
+        "image": "/data/images/var-2026/verb2/30.png",
         "options": {
           "A": "A",
           "B": "B",
@@ -313,11 +312,13 @@
           "E": "E"
         },
         "correct": "B"
-      },
+      }
+    ],
+    "ELF": [
       {
-        "id": 30,
+        "id": 31,
         "question": "",
-        "image": "/data/images/var-2026/verb1/30.png",
+        "image": "/data/images/var-2026/verb2/31.png",
         "options": {
           "A": "A",
           "B": "B",
@@ -326,26 +327,11 @@
           "E": "E"
         },
         "correct": "A"
-      }
-    ],
-    "ELF": [
-      {
-        "id": 31,
-        "question": "",
-        "image": "/data/images/var-2026/verb1/31.png",
-        "options": {
-          "A": "A",
-          "B": "B",
-          "C": "C",
-          "D": "D",
-          "E": "E"
-        },
-        "correct": "B"
       },
       {
         "id": 32,
         "question": "",
-        "image": "/data/images/var-2026/verb1/32.png",
+        "image": "/data/images/var-2026/verb2/32.png",
         "options": {
           "A": "A",
           "B": "B",
@@ -353,12 +339,12 @@
           "D": "D",
           "E": "E"
         },
-        "correct": "D"
+        "correct": "C"
       },
       {
         "id": 33,
         "question": "",
-        "image": "/data/images/var-2026/verb1/33.png",
+        "image": "/data/images/var-2026/verb2/33.png",
         "options": {
           "A": "A",
           "B": "B",
@@ -371,7 +357,20 @@
       {
         "id": 34,
         "question": "",
-        "image": "/data/images/var-2026/verb1/34.png",
+        "image": "/data/images/var-2026/verb2/34.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "B"
+      },
+      {
+        "id": 35,
+        "question": "",
+        "image": "/data/images/var-2026/verb2/35.png",
         "options": {
           "A": "A",
           "B": "B",
@@ -382,9 +381,9 @@
         "correct": "C"
       },
       {
-        "id": 35,
+        "id": 36,
         "question": "",
-        "image": "/data/images/var-2026/verb1/35.png",
+        "image": "/data/images/var-2026/verb2/36.png",
         "options": {
           "A": "A",
           "B": "B",
@@ -392,38 +391,25 @@
           "D": "D",
           "E": "E"
         },
-        "correct": "A"
+        "correct": "B"
+      },
+      {
+        "id": 37,
+        "question": "",
+        "image": "/data/images/var-2026/verb2/37.png",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D",
+          "E": "E"
+        },
+        "correct": "C"
       },
       {
         "id": 38,
         "question": "",
-        "image": "/data/images/var-2026/verb1/38.png",
-        "options": {
-          "A": "A",
-          "B": "B",
-          "C": "C",
-          "D": "D",
-          "E": "E"
-        },
-        "correct": "D"
-      },
-      {
-        "id": 39,
-        "question": "",
-        "image": "/data/images/var-2026/verb1/39.png",
-        "options": {
-          "A": "A",
-          "B": "B",
-          "C": "C",
-          "D": "D",
-          "E": "E"
-        },
-        "correct": "A"
-      },
-      {
-        "id": 40,
-        "question": "",
-        "image": "/data/images/var-2026/verb1/40.png",
+        "image": "/data/images/var-2026/verb2/38.png",
         "options": {
           "A": "A",
           "B": "B",

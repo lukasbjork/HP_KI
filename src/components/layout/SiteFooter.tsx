@@ -70,13 +70,15 @@ export function SiteFooter() {
 
         <div className="border-t border-blue-700 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-blue-300">
-            © {new Date().getFullYear()} HP med KI. Alla rättigheter förbehållna.
+            © {new Date().getFullYear()} HP med KI. Personligt studieverktyg.
           </p>
-          <div className="flex gap-6">
-            <a href="#" className="text-sm text-blue-300 hover:text-white transition-colors">Användaravtal</a>
-            <a href="#" className="text-sm text-blue-300 hover:text-white transition-colors">Integritetspolicy</a>
-            <a href="#" className="text-sm text-blue-300 hover:text-white transition-colors">Kontakt</a>
-          </div>
+          <p className="text-sm text-blue-300">
+            Provmaterial från{' '}
+            <a href="https://www.hogskoleprovet.nu" target="_blank" rel="noopener noreferrer"
+              className="underline hover:text-white transition-colors">
+              hogskoleprovet.nu
+            </a>
+          </p>
         </div>
       </div>
     </footer>
